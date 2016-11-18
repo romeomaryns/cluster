@@ -1,0 +1,55 @@
+@import '../styles/variables';
+@import '../../../../node_modules/@angular/material/core/style/elevation';
+
+:host /deep/ {
+  md-nav-list {
+    [md-list-item]:active,
+    [md-list-item]:focus {
+      outline: none;
+    }
+    [md-list-item].md-interaction-disabled .md-list-item {
+      background: none !important;
+      cursor: auto;
+    }
+  }
+}
+:host {
+  display: block;
+  @include md-elevation(1);
+  
+  .panel {
+    transition: 1s all ease;
+    margin: 0;
+  }
+
+  &:first-of-type {
+    & .td-expanded {
+      margin-bottom: $margin;
+    }
+  }
+  &:not(:first-of-type):not(:last-of-type) {
+    & .td-expanded {
+      margin-top: $margin;
+      margin-bottom: $margin;
+    }
+  }
+  &:last-of-type {
+    & .td-expanded {
+      margin-top: $margin;
+    }
+  }
+  md-nav-list:first-of-type,
+  md-list:first-of-type {
+    padding-top: 0;
+  }
+}
+md-nav-list {
+  padding: 0;
+}
+.td-expansion-primary,
+.td-expansion-secondary {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 5px;
+}

@@ -1,0 +1,14 @@
+@import '../../../../node_modules/@angular/material/core/style/elevation';
+
+:host {
+  display: flex;
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+/deep/ md-toolbar {
+  @include md-elevation(1);
+  z-index: 1;
+}
